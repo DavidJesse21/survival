@@ -361,9 +361,9 @@ rsurvpart1 <- function(Y, X, casewt, times,
                     term3 <- apply(term2, 2, cumsum)
                 }
                 else { #more than one curve, compute weighted cumsum per curve
-                    wtmat <- mapply(function(x, y) pmin(outer(x, -y, "+"), 0), auc1, auc2)
+                    wtmat <- mapply(function(x, y) pmin(outer(x, -y, "+"), 0), auc1, auc2, SIMPLIFY = FALSE)
                     term1 <- term1 * do.call(rbind, wtmat)
-                    temp <- mapply(function(x, y) apply(x*y, 2, cumsum), term2, wtmat)
+                    temp <- mapply(function(x, y) apply(x*y, 2, cumsum), term2, wtmat, SIMPLIFY = FALSE)
                     term3 <- do.call(rbind, temp)
                 }
 
@@ -443,9 +443,9 @@ rsurvpart1 <- function(Y, X, casewt, times,
                     term3 <- apply(term2, 2, cumsum)
                 }
                 else { #more than one curve, compute weighted cumsum per curve
-                    wtmat <- mapply(function(x, y) pmin(outer(x, -y, "+"), 0), auc1, auc2)
+                    wtmat <- mapply(function(x, y) pmin(outer(x, -y, "+"), 0), auc1, auc2, SIMPLIFY = FALSE)
                     term1 <- term1 * do.call(rbind, wtmat)
-                    temp <- mapply(function(x, y) apply(x*y, 2, cumsum), term2, wtmat)
+                    temp <- mapply(function(x, y) apply(x*y, 2, cumsum), term2, wtmat, SIMPLIFY = FALSE)
                     term3 <- do.call(rbind, temp)
                 }
 
@@ -509,9 +509,9 @@ rsurvpart1 <- function(Y, X, casewt, times,
                 term3 <- apply(term2, 2, cumsum)
             }
             else { #more than one curve, compute weighted cumsum per curve
-                wtmat <- mapply(function(x, y) pmin(outer(x, -y, "+"), 0), auc1, auc2)
+                wtmat <- mapply(function(x, y) pmin(outer(x, -y, "+"), 0), auc1, auc2, SIMPLIFY = FALSE)
                 term1 <- term1 * do.call(rbind, wtmat)
-                temp <- mapply(function(x, y) apply(x*y, 2, cumsum), term2, wtmat)
+                temp <- mapply(function(x, y) apply(x*y, 2, cumsum), term2, wtmat, SIMPLIFY = FALSE)
                 term3 <- do.call(rbind, temp)
             }
 
