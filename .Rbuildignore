@@ -29,3 +29,5 @@ ToDo
 todo
 xconfig
 
+^.*\.Rproj$
+^\.Rproj\.user$

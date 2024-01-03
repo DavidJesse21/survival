@@ -81,9 +81,10 @@ survresid.fit <- function(object, times,
    #It's very hard to get the next error message other than malice
    #  eg survfit(wt=Surv(time, status) ~1) 
    if (indx[1]==0) stop("a formula argument is required")
-   temp <- Call[c(1, indx)]
-   temp[[1L]] <- quote(stats::model.frame)
-   mf <- eval.parent(temp)
+   # FIXME: Commented out by David
+   # temp <- Call[c(1, indx)]
+   # temp[[1L]] <- quote(stats::model.frame)
+   # mf <- eval.parent(temp)
 
    Terms <- terms(formula, c("strata", "cluster"))
    ord <- attr(Terms, 'order')
